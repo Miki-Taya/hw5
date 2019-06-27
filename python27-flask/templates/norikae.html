@@ -1,18 +1,23 @@
 <html>
   <head><title>JSONを読み込む例</title></head>
   <body>
-    路線：
+    出発：
     <ul>
-      {% for line in network %}
-      <li> {{line.Name}}
-        <ul>
-          {% for station in line["Stations"] %}
-          <li> {{station}} </li>
+      <select name ="sen">
+          {% for line in network %}
+            <option>{{ line.Name }}</option> 
           {% endfor %}
-        </ul> 
-      </li>
-      {% endfor %}
+      </select><br><br>
+      <select name ="sen">
+          {% for line in network %}
+            {% for station in line.Staions %}
+              <option>{{ station }}</option>
+            {% endfor %}
+          {% endfor %}
+      </select>
+    
     </ul>
+ 
   </body>
 </html>
   
