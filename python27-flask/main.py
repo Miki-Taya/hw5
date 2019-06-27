@@ -32,7 +32,6 @@ def pata():
        pata += a[i]
     if(i < len(b)):
       pata += b[i]
-  print(pata)
     
   # pata.htmlのテンプレートの内容を埋め込んで、返事を返す。
   return render_template('pata.html', pata=pata)
